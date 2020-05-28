@@ -5,7 +5,8 @@
 <h1>RSVP for <%= @event[:title] %></h1>
 
 <h3>Are you going?</h3>
-
+#below is a bootstrap form.  but now instead of sending to netlify, we're sending to our own server. so in this case we need an action.
+#the action is the url listed.. because our rest bible says the receiving end of this form should be this url
 <form action="/events/<%= @event[:id] %>/rsvps/create" class="mt-5">
   <div class="form-group">
     <div class="form-check form-check-inline">

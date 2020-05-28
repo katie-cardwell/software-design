@@ -3,7 +3,7 @@ require "sequel"                                                       #
 DB = Sequel.connect "sqlite://#{Dir.pwd}/development.sqlite3"          #
 ########################################################################  
 
-# Database schema - this should reflect your domain model
+# Database schema - this should reflect your domain model. note the different syntax.  Text: true allows the text column to be longer than normal
 DB.create_table! :events do
   primary_key :id
   String :title
@@ -20,7 +20,7 @@ DB.create_table! :rsvps do
   String :comments, text: true
 end
 
-# Insert initial (seed) data
+# Insert initial (seed) data.  everytime you run this, it's going to erase the tapes and recreate them from scratch
 events_table = DB.from(:events)
 
 events_table.insert(title: "Bacon Burger Taco Fest", 
