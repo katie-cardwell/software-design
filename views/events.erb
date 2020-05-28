@@ -4,7 +4,7 @@
     # we want too loop through the events to get the list of events here ... show each as an item in the list. 
     # this says for every event in this list, return the event title (below)
     <% for event in @events %>
-        <li><a href="/events/<%= event [:id] %>"><%= event[:title] %></a> </li>
+        <li><a href="/events/<%= event [:id] %>"><%= event[:title] %></a></li>
         # above is making the event title a clickable like to the url associated with that event id
     <% end %>
 </ul>
